@@ -13,6 +13,7 @@ rigid_parameters = /home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.o
 
 pathSlicer --launch pathExtension -f fixed -m moving -p param -out /home/vromero2021/Escritorio/REG_MR2.nii.gz
 
+/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/Slicer --launch /home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/elastix -f /home/vromero2021/Escritorio/TFG/002-DATA/NIFTI_REGISTERED/NIFTI_with_FDG_NAC/sub-0005/CT/CT_PETCT_Brain_LM_FDG_STAT_BDD_100147_2.nii.gz -m /home/vromero2021/Escritorio/TFG/002-DATA/NIFTI_REGISTERED/NIFTI_with_FDG_NAC/sub-0005/FLAIR/Registered_FLAIR.nii.gz
 
 
  /home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/transformix:
@@ -25,3 +26,10 @@ pathSlicer --launch pathExtension -f fixed -m moving -p param -out /home/vromero
 out_out = '/home/vromero2021/Escritorio/r
 
 pathSlicer --launch pathExtension -tp '/home/vromero2021/Escritorio/m/TransformParameters.0.txt' -out {out_out} -in {moving}
+
+
+
+
+
+
+

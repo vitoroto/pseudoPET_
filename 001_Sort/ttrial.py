@@ -14,7 +14,7 @@ def create_dir(path):
 pathSlicer = '/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/Slicer'
 pathExtension = '/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/elastix'
 temp_intermideate = '/home/vromero2021/Escritorio/m'
-rigid_parameters = '/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/qt-scripted-modules/Resources/RegistrationParameters/Parameters_Rigid.txt'
+rigid_parameters = '/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/qt-scripted-modules/Resources/RegistrationParameters/Rigid.txt'
 temporal_result = '/home/vromero2021/Escritorio/r'
 pathExtension_transformix = '/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/transformix'
 
