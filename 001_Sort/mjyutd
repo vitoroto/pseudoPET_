@@ -1,0 +1,27 @@
+/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/elastix:
+['-f', '/tmp/Slicer-vromero2021/Elastix/20250219_110108_438/input/fixed.mha',
+'-m', '/tmp/Slicer-vromero2021/Elastix/20250219_110108_438/input/moving.mha',
+'-p', '/tmp/Slicer-vromero2021/Elastix/20250219_110108_437/Parameters_Rigid.txt',
+'-out', '/tmp/Slicer-vromero2021/Elastix/20250219_110108_438/result-transform']
+
+pathSlicer = /home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/Slicer
+
+pathExtension = /home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/elastix
+fixed = '/home/vromero2021/Escritorio/TFG/002-DATA/NIFTI/NIFTI_with_FDG_NAC/sub-0002/CT/CT_PETCT_Brain_LM_FDG_STAT_BDD_101848_2.nii.gz'
+moving = '/home/vromero2021/Escritorio/TFG/002-DATA/NIFTI/NIFTI_with_FDG_NAC/sub-0002/T1/T1_T1_MPR3D_SAG_1.2_mm_ADNI_90536_3.nii.gz'
+rigid_parameters = /home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/qt-scripted-modules/Resources/RegistrationParameters/Parameters_Rigid.txt
+
+pathSlicer --launch pathExtension -f fixed -m moving -p param -out /home/vromero2021/Escritorio/REG_MR2.nii.gz
+
+
+
+ /home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/transformix:
+ ['-tp', '/tmp/Slicer-vromero2021/Elastix/20250219_111838_237/result-transform/TransformParameters.0.txt',
+ '-out', '/tmp/Slicer-vromero2021/Elastix/20250219_111838_237/result-resample',
+ '-in', '/tmp/Slicer-vromero2021/Elastix/20250219_111838_237/input/moving.mha'
+
+ pathExtension = '/home/vromero2021/Descargas/Slicer-5.8.0-linux-amd64/slicer.org/Extensions-33216/SlicerElastix/lib/Slicer-5.8/transformix'
+
+out_out = '/home/vromero2021/Escritorio/r
+
+pathSlicer --launch pathExtension -tp '/home/vromero2021/Escritorio/m/TransformParameters.0.txt' -out {out_out} -in {moving}

@@ -1,13 +1,21 @@
+
+import nibabel as nib
 import os
-import shutil
 
+nifti_dir = '/home/vromero2021/NAS/TFGs/2021_VictorRomero/002-DATA/NIFTI/NIFTI_with_FDG_NAC'
 
-os.chdir('/home/vromero2021/NAS/TFGs/2021_VictorRomero/002-DATA')
-
-for patient in os.listdir('.//DCM_ORIGINAL/DICOM_with_FDG_NAC/sourcedata'):
-    for modality in os.listdir(f'.//DCM_ORIGINAL/DICOM_with_FDG_NAC/sourcedata/{patient}'):
-        print(f'Processing {modality} for patient {patient}...')
-        if not os.path.exists(f'.//NIFTI/NIFTI_with_FDG_NAC/{patient}/{modality}'):
-            os.makedirs(f'.//NIFTI/NIFTI_with_FDG_NAC/{patient}/{modality}')
-            os.system(f'dcm2niix -o /home/vromero2021/NAS/TFGs/2021_VictorRomero/002-DATA/NIFTI/NIFTI_with_FDG_NAC/{patient}/{modality} -z y -b y /home/vromero2021/NAS/TFGs/2021_VictorRomero/002-DATA/DCM_ORIGINAL/DICOM_with_FDG_NAC/sourcedata/{patient}/{modality}')
-            print(f'Done {modality} for patient {patient}\n')
+# Recorre los pacientes y modalidades
+for patient in os.listdir(nifti_dir):
+    patient_path = os.path.join(nifti_dir, patient)
+    if os.path.isdir(patient_path):
+        for modality in os.listdir(patient_path):
+            modality_path = os.path.join(patient_path, modality)
+            if os.path.isdir(modality_path):
+                for nifti_file in os.listdir(modality_path):
+                    if nifti_file.endswith('.nii') or nifti_file.endswith('.nii.gz'):
+                        nifti_file_path = os.path.join(modality_path, nifti_file)
+                        # Cargar el archivo NIfTI
+                        img = nib.load(nifti_file_path)
+                        # Obtener las dimensiones
+                        dimensions = img.shape
+                        print(f'{nifti_file} tiene dimensiones: {dimensions}')
