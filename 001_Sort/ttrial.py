@@ -79,5 +79,11 @@ for patient in os.listdir(input):
                     os.system(f'rm -rf {temp_intermideate}/*')
                     os.system(f'rm -rf {temporal_result}/*')
 
+import pydicom as pdcm
+import numpy as np
 
+pet_path = '/home/javier/NAS/TFGs/2021_VictorRomero/002-DATA/001-DCM_ORIGINAL/DICOM_with_FDG_NAC/sourcedata/sub-0002/FDG/PT-0005-0002.dcm'
 
+pet = pdcm.dcmread(pet_path)
+
+print(pet)
